@@ -37,3 +37,30 @@ BGMusic.Name = "Background"
 BGMusic.SoundId = songId
 BGMusic.Parent = game.Workspace
 
+local Pause = Instance.new("BoolValue")
+Pause.Name = "Paused"
+Pause.Value = false
+Pause.Parent = BGMusic
+
+local song = game.Workspace.Background
+
+game.Workspace:WaitForChild("Background").SoundId = songId
+song:Play()
+print("playing "..songId)
+local newId
+
+local adminPause = false
+
+while true do
+	adminPause = game.ServerStorage.IsMusicPlaying.Value
+	
+	if song.IsPlaying == false and adminPause == false then
+		newId = changeSong(songId)
+		game.Workspace.Background.SoundId = newId
+		song:Play()
+		table.insert(ids, songId)
+		print("playing "..newId)
+		songId = newId
+	end
+	wait(4)
+end
