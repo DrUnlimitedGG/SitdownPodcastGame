@@ -1,6 +1,6 @@
 local TweenService = game:GetService("TweenService")
 
-local door = workspace.BackstageHallwayDoor
+local door = workspace.StageDoor
 local doorRoot = door.PrimaryPart
 local properties = {CFrame = doorRoot.CFrame * CFrame.Angles(math.rad(90), 0, 0)}
 local closeProerties = {CFrame = doorRoot.CFrame * CFrame.Angles(math.rad(0), 0, 0)}
@@ -11,13 +11,13 @@ local closeInfo = {1.75, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, f
 
 open = false
 
-game.Workspace.BackstageHallwayDoor.ClickDetector.MouseClick:Connect(function(player)
+game.Workspace.StageDoor.ClickDetector.MouseClick:Connect(function(player)
 	if open == false then
 		open = true
-		game.ReplicatedStorage.Doors.Door1:FireAllClients(DoorSwingInfo, properties)
+		game.ReplicatedStorage.Doors.Door2:FireAllClients(DoorSwingInfo, properties)
 		door.DoorOpen:Play()
 		wait(3)
-		game.ReplicatedStorage.Doors.Door1:FireAllClients(closeInfo, closeProerties)
+		game.ReplicatedStorage.Doors.Door2:FireAllClients(closeInfo, closeProerties)
 		wait(1.1)
 		door.DoorClose:Play()
 		wait(0.65)
