@@ -20,9 +20,9 @@ function playR6()
 	Handle.GripPos = Vector3.new(1.5,-.5,0.3)
 	Handle.GripRight = Vector3.new(1,0,0)
 	Handle.GripUp = Vector3.new(0,.651,-.759)
-
+	
 	wait(3)
-
+	
 	Handle.GripForward = Vector3.new(-.976,0,-0.217)
 	Handle.GripPos = Vector3.new(0.2,0,0)
 	Handle.GripRight = Vector3.new(.217,0,-.976)
