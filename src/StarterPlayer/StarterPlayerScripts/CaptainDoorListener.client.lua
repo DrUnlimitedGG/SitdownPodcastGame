@@ -1,6 +1,6 @@
 local RS = game:GetService("ReplicatedStorage")
-local event = RS.Doors:WaitForChild("LobbyDoor")
-local door = workspace.LobbyDoor
+local event = RS.Doors:WaitForChild("CaptainDoor")
+local door = workspace.CaptainLounge
 local doorRoot = door.PrimaryPart
 local TweenService = game:GetService("TweenService")
 

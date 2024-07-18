@@ -14,10 +14,10 @@ open = false
 game.Workspace.LobbyDoor.ClickDetector.MouseClick:Connect(function(player)
 	if open == false then
 		open = true
-		game.ReplicatedStorage.Doors.Door1:FireAllClients(DoorSwingInfo, properties)
+		game.ReplicatedStorage.Doors.LobbyDoor:FireAllClients(DoorSwingInfo, properties)
 		door.DoorOpen:Play()
 		wait(3)
-		game.ReplicatedStorage.Doors.Door1:FireAllClients(closeInfo, closeProerties)
+		game.ReplicatedStorage.Doors.LobbyDoor:FireAllClients(closeInfo, closeProerties)
 		wait(1.1)
 		door.DoorClose:Play()
 		wait(0.65)

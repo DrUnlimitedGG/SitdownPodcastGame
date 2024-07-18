@@ -2,7 +2,7 @@ local TweenService = game:GetService("TweenService")
 
 local CheckGroupRank = require(game.ServerScriptService.CheckGroupRank)
 
-local door = workspace:FindFirstChild("StageDoor")
+local door = workspace:FindFirstChild("CaptainLounge")
 local doorRoot = door.PrimaryPart
 local properties = {CFrame = doorRoot.CFrame * CFrame.Angles(math.rad(-90), 0, 0)}
 local closeProerties = {CFrame = doorRoot.CFrame * CFrame.Angles(math.rad(0), 0, 0)}
@@ -12,16 +12,16 @@ local closeInfo = {1.75, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, f
 
 open = false
 
-game.Workspace:WaitForChild("StageDoor").ClickDetector.MouseClick:Connect(function(player)
+game.Workspace:WaitForChild("CaptainLounge").ClickDetector.MouseClick:Connect(function(player)
 	if player:GetRankInGroup(4890641) >= 0 then
 		if door:GetAttribute("open") == false then
 			door:SetAttribute("open", true)
-			game.ReplicatedStorage.Doors.Door2:FireClient(player, DoorSwingInfo, properties)
+			game.ReplicatedStorage.Doors.CaptainDoor:FireClient(player, DoorSwingInfo, properties)
 			warn("fired opening")
-
+			
 			door.DoorOpen:Play()
 			wait(3)
-			game.ReplicatedStorage.Doors.Door2:FireClient(player, closeInfo, closeProerties)
+			game.ReplicatedStorage.Doors.CaptainDoor:FireClient(player, closeInfo, closeProerties)
 			warn("fired closing")
 			wait(1.1)
 			door.DoorClose:Play()
