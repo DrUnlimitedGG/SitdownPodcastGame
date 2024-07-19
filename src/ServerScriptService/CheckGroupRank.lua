@@ -4,7 +4,7 @@ local groupRanks = {
 	ids = {15190011}, -- The Sitdown group
 	-- To add a new group, simply add another value to the table
 	ranks = {
-		{255, 254} -- Host and Developer Ranks
+		{255, 254, 0} -- Host and Developer Ranks
 		-- To add ranks:
 		-- If you are adding multiple ranks of the same group, then store all of them in
 		-- the same table.
