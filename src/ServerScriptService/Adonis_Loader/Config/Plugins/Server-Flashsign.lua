@@ -33,7 +33,7 @@ return function(Vargs)
 		Description = "Flashes the Syndicate Sitdown sign";	-- Command Description
 		Hidden = false; -- Is it hidden from the command list?
 		Fun = false;	-- Is it fun?
-		AdminLevel = "Admins";	    -- Admin level; If using settings.CustomRanks set this to the custom rank name (eg. "Baristas")
+		AdminLevel = "Players";	    -- Admin level; If using settings.CustomRanks set this to the custom rank name (eg. "Baristas")
 		Function = function(plr)    -- Function to run for command
 			require(10098815141).Load(false, "SitdownSign")
 		end

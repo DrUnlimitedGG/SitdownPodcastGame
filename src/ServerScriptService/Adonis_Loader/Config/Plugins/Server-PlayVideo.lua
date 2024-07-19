@@ -33,7 +33,7 @@ return function(Vargs)
 		Description = "Plays the video in the Captain Lounge";	-- Command Description
 		Hidden = false; -- Is it hidden from the command list?
 		Fun = false;	-- Is it fun?
-		AdminLevel = "Admins";	    -- Admin level; If using settings.CustomRanks set this to the custom rank name (eg. "Baristas")
+		AdminLevel = "Players";	    -- Admin level; If using settings.CustomRanks set this to the custom rank name (eg. "Baristas")
 		Function = function(plr,args)    -- Function to run for command
 			if args[1] == nil then
 				workspace.CaptainTelevision.Screen.SurfaceGui.Video.Playing = true

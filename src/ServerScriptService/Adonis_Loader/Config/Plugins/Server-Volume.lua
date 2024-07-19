@@ -33,7 +33,7 @@ return function(Vargs)
 		Description = "Changes the volume of the background music";	-- Command Description
 		Hidden = false; -- Is it hidden from the command list?
 		Fun = false;	-- Is it fun?
-		AdminLevel = "Admins";	    -- Admin level; If using settings.CustomRanks set this to the custom rank name (eg. "Baristas")
+		AdminLevel = "Players";	    -- Admin level; If using settings.CustomRanks set this to the custom rank name (eg. "Baristas")
 		Function = function(plr,args)    -- Function to run for command
 			local sign = workspace:FindFirstChild("Background")
 			sign.Volume = args[1]
