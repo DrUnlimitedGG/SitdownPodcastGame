@@ -22,6 +22,7 @@ uis.InputChanged:Connect(function(input)
 			local percentage = math.clamp(relativePos.X/slider.AbsoluteSize.X,0,1)
 			sliderButton.Position = UDim2.new(percentage,0,.5,0)
 			
+			game.ReplicatedStorage.Lighting.All:FireServer(percentage)
 			wait(0.1)
 		end
 	end
