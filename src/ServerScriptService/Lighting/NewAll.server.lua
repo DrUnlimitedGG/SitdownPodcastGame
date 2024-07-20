@@ -29,3 +29,35 @@ for i,v in pairs(game.Workspace:GetDescendants()) do
 	end
 end
 
+event.OnServerEvent:Connect(function(player, percentage)
+	local isAllowed = module.CheckRank(player)
+	if isAllowed then
+		for i, v in pairs(game.Workspace:GetDescendants()) do
+			if v:IsA("Light") then
+				if (v.Parent.Parent.Name == "Spotlights") == false then
+					if (v.Parent.Parent.Name == "FirePlace") == false then
+						if (v.Parent.Parent.Name == "Television") == false then
+							if (v.Parent.Parent.Name == "Backstage") == false then
+								if (v.Name == "Ignore") == false then
+									local brightness
+
+									for i1, v1 in pairs(game.ServerStorage.LightDescs:GetChildren()) do
+										if (v1.Name == v.Name) == true then
+											brightness = v1.Value
+											
+											v.Brightness = v1.Value * percentage
+										end
+									end
+									
+							
+									
+									--v.Brightness = product
+								end
+							end	
+						end	
+					end
+				end
+			end
+		end
+	end
+end)

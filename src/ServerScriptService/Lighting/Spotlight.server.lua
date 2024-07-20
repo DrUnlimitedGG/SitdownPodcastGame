@@ -5,7 +5,7 @@ local module = require(game.ServerScriptService.CheckGroupRank)
 game.ReplicatedStorage.Lighting.Spotlight.OnServerEvent:Connect(function(player, percentage)
 	local isAllowed = module.CheckRank(player)
 	if isAllowed then
-		if spotlights.isChanging.Value == false then
+		--[[if spotlights.isChanging.Value == false then
 			spotlights.isChanging.Value = true
 
 			if spotlights.Enabled.Value == true then
@@ -51,8 +51,16 @@ game.ReplicatedStorage.Lighting.Spotlight.OnServerEvent:Connect(function(player,
 			spotlights.isChanging.Value = false
 		elseif spotlights.isChanging.Value == true then
 			print("Light on/off failed because lights are already changing!")
-		end 
+		end ]]--
 		
+		for i, v in pairs(spotlights:GetDescendants()) do
+			if v.Name == "LFive" or v.Name == "LFour" or v.Name == "LThree" or v.Name == "LTwo" or v.Name == "LOne" then
+				warn(v.Brightness)
+				v.Brightness = percentage * 4.8
+			elseif v:IsA("BasePart") and (v.Name == "One" or v.Name == "Two" or v.Name == "Three" or v.Name == "Four" or v.Name == "Five") then
+				v.Transparency = 1 - percentage
+			end
+		end
 		
 	end
 end)
