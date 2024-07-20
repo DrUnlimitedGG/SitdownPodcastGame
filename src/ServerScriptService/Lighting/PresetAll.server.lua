@@ -3,6 +3,15 @@ local AllEnabled = game.ServerStorage.AllLights.AllEnabled
 local isChanging = game.ServerStorage.AllLights.IsChanging
 local module = require(game.ServerScriptService.CheckGroupRank)
 
+for i, v in pairs(workspace:GetDescendants()) do
+	if v.Name == "SpotLight" or v.Name == "PointLight" then
+		if v.Parent.Position.Z < -88.025 then
+			v.Name = "Ignore"
+			warn("added part")
+		end
+	end
+end
+
 AllEnabled = true
 isChanging = false
 
